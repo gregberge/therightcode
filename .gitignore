@@ -1,2 +1,4 @@
 node_modules/
 *.db
+/content/data/*
+/content/images/**/*
