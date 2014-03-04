@@ -47,10 +47,8 @@ config = {
         url: 'http://therightcode.net',
         mail: {},
         database: {
-            client: 'sqlite3',
-            connection: {
-                filename: path.join(__dirname, '/content/data/ghost.db')
-            },
+            client: 'pg',
+            connection: process.env.HEROKU_POSTGRESQL_CRIMSON_URL,
             debug: false
         },
         server: {
