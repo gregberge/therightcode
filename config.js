@@ -45,10 +45,20 @@ config = {
     // Configure your URL and mail settings here
     production: {
         url: 'http://therightcode.net',
-        mail: {},
+        mail: {
+            transport: 'SMTP',
+            host: 'smtp.mandrillapp.com',
+            options: {
+                service: 'Mandrill',
+                auth: {
+                    user: process.env.MANDRILL_USERNAME,
+                    pass: process.env.MANDRILL_APIKEY
+                }
+            }
+        },
         database: {
             client: 'pg',
-            connection: process.env.HEROKU_POSTGRESQL_CRIMSON_URL,
+            connection: process.env.DATABASE_URL,
             debug: false
         },
         server: {
