@@ -1,0 +1,38 @@
+{{!< default}}
+
+{{! Each post will be output using this markup }}
+{{#foreach posts}}
+
+<article class="{{post_class}}">
+  <header class="post-header">
+    <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+  </header>
+  <section class="post-excerpt">
+    <p>{{excerpt}}&hellip;</p>
+  </section>
+  <footer class="post-item-footer">
+    <ul class="post-item-meta-list">
+      <li class="post-item-meta-item">
+        <time datetime="{{date published_at format="YYYY-MM-DD"}}" itemprop="datePublished" title="{{date format="MM-DD-YYYY HH:mm:ss"}}">
+          {{date published_at timeago="true"}}
+        </time>
+      </li>
+      {{#if tags}}
+        <li class="post-item-meta-item">
+          {{#foreach tags}}
+            <span itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}">{{name}}</span>
+            {{#if @last}} {{else}}, {{/if}}
+          {{/foreach}}
+        </li>
+      {{/if}}
+      <li class="post-item-meta-item">
+        <a href="{{url}}#disqus_thread" data-disqus-identifier="{{id}}"></a>
+      </li>
+    </ul>
+  </footer>
+</article>
+
+{{/foreach}}
+
+{{!! After all the posts, we have the previous/next pagination links }}
+{{pagination}}

@@ -1,0 +1,20 @@
+{
+  "name": "cody",
+  "version": "0.0.0",
+  "description": "Ghost theme.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/neoziro/cody.git"
+  },
+  "keywords": [
+    "ghost",
+    "theme"
+  ],
+  "author": "Greg Bergé <berge.greg@gmail.com>",
+  "homepage": "https://github.com/neoziro/cody",
+  "devDependencies": {
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt": "^0.4.4",
+    "grunt-contrib-uglify": "^0.4.0"
+  }
+}
