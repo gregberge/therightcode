@@ -210,7 +210,7 @@ function robots() {
                     if (err) {
                         return next(err);
                     }
-                    
+
                     content = {
                         headers: {
                             'Content-Type': 'text/plain',
@@ -251,6 +251,9 @@ module.exports = function (server, dbHash) {
             expressServer.use(express.logger(logging || 'dev'));
         }
     }
+
+    // Compression
+    expressServer.use(require('connect-gzip').gzip());
 
     // Favicon
     expressServer.use(subdir, express.favicon(corePath + '/shared/favicon.ico'));
