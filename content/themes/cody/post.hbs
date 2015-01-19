@@ -15,7 +15,7 @@
       {{#if tags}}
         <li class="post-item-meta-item">
           {{#foreach tags}}
-            <span itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}">{{name}}</span>
+            <span itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}"><a href="{{url}}">{{name}}</a></span>
             {{#if @last}} {{else}}, {{/if}}
           {{/foreach}}
         </li>
@@ -30,11 +30,13 @@
 
   <footer class="post-footer">
 
+    {{#author}}
     <section class="author">
-      <img src="{{author.image}}">
-      <h4>{{author.name}}</h4>
-      <p>{{author.bio}}</p>
+      <img src="{{image}}">
+      <h4><a href="{{url}}">{{name}}</a></h4>
+      <p>{{bio}}</p>
     </section>
+    {{/author}}
 
     <section class="share">
       <a class="icon-twitter" href="http://twitter.com/share?text={{encode title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
