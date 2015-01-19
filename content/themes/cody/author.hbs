@@ -6,7 +6,7 @@
 {{! Everything inside the #author tags pulls data from the author }}
 {{#author}}
 {{#if cover}}<div class="author-cover" style="background-image: url({{cover}})"></div>{{/if}}
-<div class="author-profile">
+<div class="author-profile {{#if cover}}covered{{/if}}">
     {{#if image}}
     <figure class="author-image">
         <div class="img" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></div>

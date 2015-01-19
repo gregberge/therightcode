@@ -631,7 +631,7 @@ iframe, .fluid-width-video-wrapper {
     width: 120px;
     height: 120px;
     padding: 3px;
-    margin: -100px auto 20px;
+    margin: 0 auto 20px;
     box-shadow: none;
 
     .img {
@@ -644,6 +644,10 @@ iframe, .fluid-width-video-wrapper {
       border-radius: 100%;
       border: 3px solid white;
     }
+  }
+
+  .covered .author-image {
+    margin-top: -100px;
   }
 
   .author-meta {
